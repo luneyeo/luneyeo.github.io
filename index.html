@@ -16,6 +16,21 @@
             type="application/javascript"
             src="https://cdn.c360a.salesforce.com/beacon/c360a/f5fd7bd5-b628-486b-98a2-36de8bca1be6/scripts/c360a.min.js"
         ></script>
+        <script type="application/javascript">
+            window.addEventListener('load', (event) => {
+                SalesforceInteractions.init({
+                    cookieDomain: '',
+                    consents: [
+                        {
+                            provider: 'Web Provider',
+                            purpose: 'Tracking',
+                            status: SalesforceInteractions.ConsentStatus.OptIn,
+                        },
+                    ],
+                });
+                SalesforceInteractions.setLoggingLevel(5);
+            });
+        </script>
     </head>
     <body>
         <h1 class="name">초록우산</h1>
